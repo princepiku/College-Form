@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="description" content="Registration-form">
+    <meta name="keywords" content="Registration_form, validation, button">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Prince_Alex">
+    <link rel="shortcut icon" href="Image/images.jpg" type="image/x-icon">
+
+    <title>Registration&Form</title>
+
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Look.css">
+    <link rel="stylesheet" href="Demo.css">
+
+  </head>
+  <center>
+      <h1>Registration Form</h1>
+    <body style="background-color: lightblue;">
+      
+      <script>
+
+        function validate()
+        {
+          var name = document.reg_form.name;
+          var dob = document.reg_form.dob;
+          var email = document.reg_form.email;
+          var telNo = document.reg_form.telNo;
+          var number = document.reg_form.number;
+          
+          var gender = document.reg_form.gender;
+          var address = document.reg_form.address;
+          var course = document.reg_form.course;
+  
+          if(name.value.length <= 0)
+          {
+              alert("Name is required");
+              name.focus();
+              return false;
+          }else
+
+          if(email.value.length <= 0)
+          {
+              alert("Email id is required"); 
+              email.focus(); 
+              return false; 
+          }else
+
+          if(telNo.value.length <= 0)
+          {
+              alert("Mobile number is required");
+              telNo.focus();
+              return false;
+          }else
+
+          if(number.value.length <= 0)
+          {
+            alert("Aadhar number is required");
+            number.focus();
+            return false;
+          }else
+
+          if(dob.value.length <= 0)
+          {
+            alert("Date of birth is required");
+            dob.focus();
+            return false;
+          }else
+
+          if(gender.value.length <= 0)
+          {
+              alert("Gender is required");
+              gender.focus();
+              return false;
+          }else
+
+          if(address.value.length <= 0)
+          {
+              alert("Address is required");
+              address.focus();
+              return false;
+          }else
+          
+          if(course.value == "select course")
+          {
+              alert("Course is required");
+              course.focus();
+              return false;
+          }
+        }
+      </script>
+      <form action="SI.html" onsubmit="return validate()">
+        <fieldset>
+          <table border="1">
+            <center>
+              <img src="Image\Reva.JPG" style="border-radius: 5pt;" width="140px" height="140px"><br>
+            </center>
+              <tr>
+                <td>
+                  <label for="name">Name</label>
+                </td> 
+                <td>
+                  <input type="text" name="name" id="name" minlength="4" maxlength="30" placeholder="Prince" spellcheck="true" autofocus required title="Enter Your Name">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="email">Email</label>
+                </td>
+                <td>
+                  <input type="email" name="email" id="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" size="32" placeholder="princesinha2018@gmail.com" required title="Enter Your Email">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="telNo">Phone</label>
+                </td>
+                <td>
+                  <input type="tel" name="telNo" id="telNo" pattern="^\d{10}$" maxlength="10" minlength="10" placeholder="914-238-2053" required title="Enter Your Phone">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="number">Aadhar</label>
+                </td>
+                <td>
+                  <input type="text" name="number" id="aadhar" pattern="^\d{12}$" maxlength="12" minlength="12" placeholder="2884 7998 3757" required title="Enter Your Aadhar">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="dob">Birthday</label>
+                </td>
+                <td>
+                  <input type="date" name="dob" id="dob" required title="Enter Your DOB">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="gender" name="gender">Gender</label>
+                </td>
+                <td>
+                  <input type="radio" name="gender" checked title="Select Your Gender"><label for="m1">Male</label>
+                  <input type="radio" name="gender" title="Select Your Gender"><label for="f1">Female</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="address">Address</label>
+                </td>
+                <td>
+                  <input type="textarea" name="address" size="35" placeholder="Address" required title="Enter Your Address">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="course">Course</label>
+                </td>
+                <td>
+                  <select name="course" title="Select Your Course">
+                    <option value="select course"> Select Course </option>
+                    <option value="M-Tech"> M-Tech </option>
+                    <option value="MSC"> MSC </option>
+                    <option value="MBA"> MBA </option>
+                    <option value="MCA"> MCA </option>
+                    <option value="MCom"> M.Com </option>
+                    <option value="B-Tech"> B-Tech </option>
+                    <option value="BSC"> BSC </option>
+                    <option value="BBA"> BBA </option>
+                    <option value="BCA"> BCA </option>
+                    <option value="B.Com"> B.Com </option>
+                  </select><br>
+                </td>
+              </tr>
+            <tr>
+              <td>             
+                <input type="submit" name="submit" style="border-radius: 2pt;" value="Submit">
+                <input type="reset" name="reset" style="border-radius: 2pt;" value="Clear">
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </body>
+  </center>
+</html>
